@@ -3,7 +3,7 @@ local json = require 'json'
 
 local request = http.request
 
-local Books = {
+local Translations = {
   CHEROKEE = 'cherokee',
   BBE = 'bbe',
   KJV = 'kjv',
@@ -30,12 +30,12 @@ local function fetch (book, chapter, ranges, translation)
 end
 
 return {
-  Books = Books,
+  Translations = Translations,
 
   Preach = function (args)
     local book = args.book
     local chapter = args.chapter
-    local translation = args.translation or Books.KJV
+    local translation = args.translation or Translations.KJV
 
     local ranges = ""
 
