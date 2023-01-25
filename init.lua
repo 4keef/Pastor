@@ -22,14 +22,10 @@ local function fetch (book, chapter, ranges, translation)
 
   local res, data = request("GET", url)
 
-  print(data)
-
   if res.code == 200 then
-    return json.parse(data)
-  end
-
-  if res.code == 404 then
-    error("Failed to retrieve verse" , 2)
+    return (json.parse(data)).verses
+  else
+    error("Failed to retrieve verse", 2)
   end
 end
 
@@ -52,4 +48,3 @@ return {
     return fetch(book, chapter, ranges, translation)
   end
 }
-
