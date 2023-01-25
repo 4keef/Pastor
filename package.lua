@@ -8,7 +8,7 @@
   homepage = "https://github.com/4keef/pastor",
   dependencies = {
     "creationix/coro-http",
-    "luvit/secure-socket@"
+    "luvit/secure-socket"
   },
   files = {
     "**.lua",
